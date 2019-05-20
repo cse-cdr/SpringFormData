@@ -45,16 +45,16 @@ public class HomeController {
 		return "index";
 	}
 	
-//	@RequestMapping(method=RequestMethod.GET, value="/student")//Get 
-//	public String goStudent(HttpServletRequest httpServletRequest,Model model)
-//	{
-//		String id = httpServletRequest.getAttribute("id").toString();
-//		System.out.println("id: "+id);
-//		
-//		model.addAttribute("studentId", id);
-//		
-//		return "student/studentId";
-//	}
+	@RequestMapping(method=RequestMethod.GET, value="/student")//Get 
+	public String goStudent(HttpServletRequest httpServletRequest,Model model)
+	{
+		String id = httpServletRequest.getParameter("id");
+		System.out.println("id: "+id);
+		
+		model.addAttribute("studentId", id);
+		
+		return "student/studentId";
+	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/student")
 	public ModelAndView goStudent(HttpServletRequest httpServletRequest)
